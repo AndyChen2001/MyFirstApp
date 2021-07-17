@@ -62,5 +62,9 @@ App({
     rgb: 'rgb(7,193,96)',
     level:1,
     exp:20,
+    practicefinish:false,
+    medicinefinish:false,
+    eatfinish:false,
+    sleepfinish:false
   }
 })

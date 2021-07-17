@@ -13,6 +13,11 @@ Page({
     exp: app.globalData.exp,
     slimeaction:"https://www.z4a.net/images/2021/07/16/dynamic.gif",
   },
+  gotoPage_task:function(){
+    wx.navigateTo({
+      url:'/pages/home/task/task'
+    })
+  },
   click: function (e) {
     app.homeclick(e)
   },
@@ -42,4 +47,12 @@ Page({
       }
     })
   },
+  getUserInfo(e) {
+    // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
+    console.log(e)
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+  }
 })

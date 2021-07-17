@@ -16,3 +16,10 @@
   border-radius:50%;
   margin-top:15rpx;
 }
+.btnImg {
+  width: 145rpx;
+  height: 145rpx;
+  left:70rpx;
+  top:100rpx;
+}
+

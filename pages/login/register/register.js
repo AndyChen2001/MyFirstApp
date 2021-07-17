@@ -5,7 +5,6 @@ Page({
   data: {
     username: '',
     password: '',
-    password2: '',
   },
   
   inputUsername(e) {
@@ -18,19 +17,8 @@ Page({
       password: e.detail.value,
     })
   },
-  inputPassword2(e) {
-    this.setData({
-      password2: e.detail.value,
-    })
-  },
 
   register() {
-    if (this.data.password != this.data.password2) {
-      wx.showToast({
-        title: '两次密码不同',
-        icon: 'none',
-      })
-    } else {
     const {
       username,
       password,
@@ -39,8 +27,8 @@ Page({
     if (username) user.set({username});
     if (password) user.set({password});
     user.save().then(() => {
-      wx.navigateTo({
-        url: '../basic_setting/basic_setting',
+      wx.redirectTo({
+        url: '../login/login',
       });
       wx.showToast({
         title: '注册成功',
@@ -52,6 +40,5 @@ Page({
         icon:'none'
       })
     });
-  }
-},
+  },
 })
